@@ -1,5 +1,9 @@
 # Portfolio Tracker
 
 ## Members
-  Julien Bonin
-  Taylor Privat
+'''
+Julien Bonin
+Taylor Privat
+'''
+
+##
