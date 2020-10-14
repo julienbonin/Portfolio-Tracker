@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+    display: grid;
+    height: 98vh;
+    width: 98vw;
+}
+
+#Content {
+    display: grid;
+    width: 300px;
+    height: 40%;
+    grid-template-rows: auto;
+    margin: auto;
+    border-style: solid;
+}
+
+#Login_Form {
+    margin: auto;
+    display: grid;
+    text-align: center;
+    height: 40%;
+}
+
+#Login_Form form {
+    display: grid;
+    row-gap: 10px;
+}
+
+#Login_Form input {
+    height: 25px;
+    width: 200px;
+}
+
+#Login_Form button {
+    height: 30px;
+    width: 175px;
+    margin: auto;
+}
