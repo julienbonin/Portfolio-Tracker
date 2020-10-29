@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+header {
+    display: grid;
+    grid-template-columns: 30% auto auto;
+    border-style: solid;
+
+}
+
+#UserName {
+    margin: auto;
+}
+
+#ManagePortfolioButton, #AccountEditButton {
+    margin: auto;
+}
+
+#ManagePortfolioSection {
+    position: absolute;
+    border-style: solid;
+    margin: auto;
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 10%;
+    height: auto;
+
+    display: none;  /* in Javascript, toggle this 'grid/none' when user clicks 'Manage Portfolio' button */
+}
+
+#ManagePortfolioSection form {
+    display: grid;
+}
+
+#ManagePortfolioSection input {
+    height: 25px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#ManagePortfolioSection button {
+    height: 30px;
+    width: 175px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+#AccountEditSection {
+    position: absolute;
+    border-style: solid;
+    margin: auto;
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 10%;
+    height: auto;
+
+    display: none; /* in Javascript, toggle this 'grid/none' when user clicks 'Manage Portfolio' button */
+}
+
+#AccountEditSection form {
+    display: grid;
+}
+
+
+#AccountEditSection input {
+    height: 25px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#AccountEditSection button {
+    height: 30px;
+    width: 175px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#Content {
+    margin-top: 10px;
+    height: 85vh;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+#Content div {
+    border-style: solid;
+    padding-left: 10px;
+}

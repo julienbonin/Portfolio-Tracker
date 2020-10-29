@@ -24,6 +24,9 @@
                 <div><img src='/img/GreyCheck.png'><p>at least 1 special symbol</p></div>
                 <div><img src='/img/GreyCheck.png'><p>password match</p></div>
             </div>
+
+            <h5><a href='/include/login.php'>Go To Login</a></h5>
+
         </div>
 
     </body>
