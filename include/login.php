@@ -3,12 +3,12 @@
     <head>
         <title>Login</title>
         <link rel='stylesheet' href='/CSS/login.css'>
-        <?php include '../Scripts/scripts.php'; ?>
+        <?php //include '../Scripts/script.php'; ?>
     </head>
     <body>
 
         <div id='Content'>
-            <form id='Login_Form' action="../Scripts/login.php" method='POST'>
+            <form id='Login_Form' action="../Scripts/login_script.php" method='POST'>
                 <input type='text' placeholder='Email' name='email' required>
                 <input type='password' placeholder='Password' name='password' required>
                 <button type='submit'>Submit</button>
