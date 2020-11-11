@@ -15,8 +15,8 @@ DROP TABLE IF EXISTS `UserData`;
 CREATE TABLE `UserData` (
     `ID` INT,
     `Ticker` varchar(45),
-    FOREIGN KEY (`ID`) REFERENCES `Users` (`ID`),
-    FOREIGN KEY (`Ticker`) REFERENCES `SupportedStocks` (`Ticker`),
+    FOREIGN KEY (`ID`) REFERENCES `Users` (`ID`) ON DELETE CASCADE,
+    FOREIGN KEY (`Ticker`) REFERENCES `SupportedStocks` (`Ticker`) ON DELETE CASCADE,
     `NumberOfShares` INT,
     `PricePaidPerShare` FLOAT
 );
@@ -31,3 +31,9 @@ CREATE TABLE `SupportedStocks` (
     `CompanyName` varchar(45),
     `CurrentPrice` FLOAT
 );
+
+
+INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AAPL', 'Apple Inc', '125.00');
+INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AMD', 'Advanced Micro Devices, Inc.', '78.15');
+INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('NVDA', 'NVIDIA Corp.', '510.00');
+INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('YETI', 'YETI Holdings', '55.70');

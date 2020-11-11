@@ -19,6 +19,10 @@ VALUES
 '$email',
 '$password');";
 
+
+
+
+
 if ($conn->query($sql) == True) {
   print("Connection Done");
 }

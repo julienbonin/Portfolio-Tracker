@@ -3,17 +3,20 @@
 
 header {
     display: grid;
-    grid-template-columns: 30% auto auto;
+    grid-template-columns: 30% auto auto auto;
     border-style: solid;
-
 }
 
 #UserName {
     margin: auto;
 }
 
-#ManagePortfolioButton, #AccountEditButton {
+#ManagePortfolioButton, #AccountEditButton, #DeleteAccountButton {
     margin: auto;
+}
+
+#DeleteAccountButton button {
+    color: red;
 }
 
 #ManagePortfolioSection {
@@ -21,10 +24,10 @@ header {
     border-style: solid;
     margin: auto;
     text-align: center;
-    margin-left: 45%;
+    margin-left: 40%;
     margin-top: 10%;
     height: auto;
-
+    background-color: white;
     display: none;  /* in Javascript, toggle this 'grid/none' when user clicks 'Manage Portfolio' button */
 }
 
@@ -47,19 +50,15 @@ header {
     margin-bottom: 10px;
 }
 
-
-
-
-
 #AccountEditSection {
     position: absolute;
     border-style: solid;
     margin: auto;
     text-align: center;
-    margin-left: 45%;
+    margin-left: 40%;
     margin-top: 10%;
     height: auto;
-
+    background-color: white;
     display: none; /* in Javascript, toggle this 'grid/none' when user clicks 'Manage Portfolio' button */
 }
 

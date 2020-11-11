@@ -8,10 +8,16 @@
     </head>
     <body>
       
-      <header> 
+      <header>
         <div id='UserName'><h1><?php printUserName($userID);?></h1></div>
         <div id='ManagePortfolioButton'><button type='submit' onclick='toggleManagePorfolioView()'>Manage Porfolio</button></div> 
         <div id='AccountEditButton'><button type='submit' onclick='toggleAccountEditView()'>Account Edit</button></div>
+        <div id='DeleteAccountButton'>
+          <form action='/Scripts/delete_user_account.php' method='POST'>
+            <input type='hidden' value='<?php echo $userID; ?>' name='userID'>
+            <button type='submit'>Delete Account</button>
+          </form>
+        </div>
       </header>
 
       <div id='ManagePortfolioSection'>
