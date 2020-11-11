@@ -1,7 +1,9 @@
+
+/*
 function email_check() {
     var email = document.getElementById('email').value;
-    
   }
+*/
   
   function check_length(input) {
     if (input.length >= 8) { return true;}
@@ -44,14 +46,12 @@ function email_check() {
     return valid;
   }
   
-
   function validate_password() 
   {
     var img = document.getElementById('img5');
 
     var password = document.getElementById('password').value;
     var password_verify = document.getElementById('password_verify').value;
-
 
     if ((password == password_verify) && (password.length > 0)) {
         img.src='/img/GreenCheck.png';
@@ -61,12 +61,7 @@ function email_check() {
         img.src='/img/GreyCheck.png';
         return false;
     }
-
-
-
-
   }
-
 
   function validate()
   {
@@ -133,7 +128,21 @@ function email_check() {
   }
 
 
+function toggleManagePorfolioView() {
+  var content = document.getElementById('ManagePortfolioSection');
+  if (content.style.display == 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+}
 
-
-  //EventTarget.addEventListener("keydown", )
+function toggleAccountEditView() {
+  var content = document.getElementById('AccountEditSection');
+  if (content.style.display == 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+}
   

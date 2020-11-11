@@ -3,7 +3,6 @@
     <head>
         <title>Login</title>
         <link rel='stylesheet' href='/CSS/login.css'>
-        <?php //include '../Scripts/script.php'; ?>
     </head>
     <body>
 
