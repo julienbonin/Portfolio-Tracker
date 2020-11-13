@@ -10,6 +10,18 @@ CREATE TABLE `Users` (
 );
 
 
+DROP TABLE IF EXISTS `SupportedStocks`;
+
+
+CREATE TABLE `SupportedStocks` (
+    `Ticker` varchar(45),
+    PRIMARY KEY (`Ticker`),
+    `CompanyName` varchar(45),
+    `CurrentPrice` FLOAT
+);
+
+
+
 DROP TABLE IF EXISTS `UserData`;
 
 CREATE TABLE `UserData` (
@@ -22,15 +34,7 @@ CREATE TABLE `UserData` (
 );
 
 
-DROP TABLE IF EXISTS `SupportedStocks`;
 
-
-CREATE TABLE `SupportedStocks` (
-    `Ticker` varchar(45),
-    PRIMARY KEY (`Ticker`),
-    `CompanyName` varchar(45),
-    `CurrentPrice` FLOAT
-);
 
 
 INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AAPL', 'Apple Inc', '125.00');
