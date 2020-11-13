@@ -1,17 +1,15 @@
+DROP TABLE IF EXISTS `UserData`;
 DROP TABLE IF EXISTS `Users`;
+DROP TABLE IF EXISTS `SupportedStocks`;
 
 CREATE TABLE `Users` (
     `ID` INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`ID`),
     `FirstName` varchar(45) NOT NULL,
     `LastName` varchar(45) NOT NULL,
     `Email` varchar(45) NOT NULL,
-    `Password` varchar(45) NOT NULL,
-    PRIMARY KEY (`ID`)
+    `Password` varchar(45) NOT NULL
 );
-
-
-DROP TABLE IF EXISTS `SupportedStocks`;
-
 
 CREATE TABLE `SupportedStocks` (
     `Ticker` varchar(45),
@@ -19,10 +17,6 @@ CREATE TABLE `SupportedStocks` (
     `CompanyName` varchar(45),
     `CurrentPrice` FLOAT
 );
-
-
-
-DROP TABLE IF EXISTS `UserData`;
 
 CREATE TABLE `UserData` (
     `ID` INT,
@@ -32,10 +26,6 @@ CREATE TABLE `UserData` (
     `NumberOfShares` INT,
     `PricePaidPerShare` FLOAT
 );
-
-
-
-
 
 INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AAPL', 'Apple Inc', '125.00');
 INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AMD', 'Advanced Micro Devices, Inc.', '78.15');
