@@ -15,6 +15,13 @@ if ($result) {
     //if ($result) { 
     //    header("Location: /index.html");
     //}
+    
+    // Only update logs if query was successful
+    $logsql = "INSERT INTO `PortfolioTracker`.`Logs` (`ID`, `Change`, `Date`) VALUES ('$userID', 'DeleteUser', NOW());";
+    $logresult = $conn->query($logsql);
+    if ($logresult) {
+        print("Logs updated.");
+    } else { print("Logs not updated!"); }
 } else {
     print("Operation could not be completed");
     print(mysqli_error($conn));
