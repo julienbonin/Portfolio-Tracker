@@ -22,6 +22,14 @@ VALUES
 if ($conn->query($sql) == True) {
     print("Connection Done");
     header("Location: /include/homepage.php?userID=$userID");
+    
+    // Only update the log is the query was successful
+    $sqlLog = "INSERT INTO `PortfolioTracker`.`Logs` 
+    (`ID`, `Change`, `Date`, `Ticker`, `NumberOfShares`, `PricePaidPerShare`)
+    VALUES ('$userID', 'AddStock', NOW(), '$ticker', '$numShares', '$sharePrice');";
+    if ($conn->query($sqlLog) == True) {
+        print("Log Updated");
+    } else { print("Log could not be updated."); }
 } else {
     print("Something went wrong!");
 }
