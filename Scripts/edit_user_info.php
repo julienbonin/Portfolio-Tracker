@@ -14,7 +14,8 @@ $emailUpdated = false;
 if (strlen($firstName) > 0) {
     // Get old first name for records
     $logsql = "SELECT `FirstName` FROM `PortfolioTracker`.`Users` WHERE `Users`.`ID`='$userID';";
-    $oldFirstName = $conn->query($logsql); // Gives old first name
+    $oldFirstName = $conn->query($logsql); 
+    $oldFirstName = $conn->fetch_row(); // Gives old first name
     
     $sql = "UPDATE `PortfolioTracker`.`Users` SET `FirstName`='$firstName' WHERE `Users`.`ID`='$userID'";
     $result = $conn->query($sql); // Returns result of query
@@ -23,7 +24,7 @@ if (strlen($firstName) > 0) {
         
         // Only update Logs if query successful
         $log = "INSERT INTO `PortfolioTracker`.`Logs` (`ID`, `Change`, `Date`, `OldInfo`, `NewInfo`) VALUES
-                ('$userID', 'FirstNameChange', NOW(), '$firstName', '$oldFirstName');";
+                ('$userID', 'FirstNameChange', NOW(), '$firstName', '$oldFirstName[0]');";
         $conn->query($log);
     } 
 } else {
@@ -34,7 +35,8 @@ if (strlen($firstName) > 0) {
 if (strlen($lastName) > 0) {
     // Get old last name for records
     $logsql = "SELECT `LastName` FROM `PortfolioTracker`.`Users` WHERE `Users`.`ID`='$userID';";
-    $oldLastName = $conn->query($logsql); // Gives old last name
+    $oldLastName = $conn->query($logsql); 
+    $oldLastName = $oldLastName->fetch_row(); // Gives old last name
     
     $sql = "UPDATE `PortfolioTracker`.`Users` SET `LastName`='$lastName' WHERE `Users`.`ID`='$userID'";
     $result = $conn->query($sql); // Returns result of query
@@ -43,7 +45,7 @@ if (strlen($lastName) > 0) {
         
         // Only update log is query successful
         $log = "INSERT INTO `PortfolioTracker`.`Logs` (`ID`, `Change`, `Date`, `OldInfo`, `NewInfo`) VALUES
-                ('$userID', 'LastNameChange', NOW(), '$lastName', '$oldLastName');";
+                ('$userID', 'LastNameChange', NOW(), '$lastName', '$oldLastName[0]');";
         $conn->query($log);
     } 
 } else {
@@ -54,7 +56,8 @@ if (strlen($lastName) > 0) {
 if (strlen($email) > 0) {
     // Get old email for records
     $logsql = "SELECT `Email` FROM `PortfolioTracker`.`Users` WHERE `Users`.`ID`='$userID';";
-    $oldEmail = $conn->query($logsql); // Gives old email
+    $oldEmail = $conn->query($logsql); 
+    $oldEmail = $oldEmail->fetch_row(); // Gives old email
     
     $sql = "UPDATE `PortfolioTracker`.`Users` SET `Email`='$email' WHERE `Users`.`ID`='$userID'";
     $result = $conn->query($sql); // Returns result of query
@@ -63,7 +66,7 @@ if (strlen($email) > 0) {
         
         // Only update log is query successful
         $log = "INSERT INTO `PortfolioTracker`.`Logs` (`ID`, `Change`, `Date`, `OldInfo`, `NewInfo`) VALUES
-                ('$userID', 'EmailChange', NOW(), '$email', '$oldEmail');";
+                ('$userID', 'EmailChange', NOW(), '$email', '$oldEmail[0]');";
         $conn->query($log);
     } 
 } else {
