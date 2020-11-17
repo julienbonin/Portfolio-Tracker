@@ -30,7 +30,7 @@ CREATE TABLE `UserData` (
 
 CREATE TABLE `Logs` (
     `ID` INT,
-    FOREIGN KEY (`ID`) REFERENCES `Users` (`ID`) ON DELETE CASCADE,
+    FOREIGN KEY (`ID`) REFERENCES `Users` (`ID`),
     `Change` varchar(45) NOT NULL,
     `Date` DATETIME DEFAULT NOW() NOT NULL,
     `Ticker` varchar(45),
