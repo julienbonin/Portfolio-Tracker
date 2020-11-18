@@ -1,6 +1,8 @@
+DROP TABLE IF EXISTS `Logs`;
 DROP TABLE IF EXISTS `UserData`;
 DROP TABLE IF EXISTS `Users`;
 DROP TABLE IF EXISTS `SupportedStocks`;
+
 
 CREATE TABLE `Users` (
     `ID` INT NOT NULL AUTO_INCREMENT,
@@ -25,6 +27,17 @@ CREATE TABLE `UserData` (
     FOREIGN KEY (`Ticker`) REFERENCES `SupportedStocks` (`Ticker`) ON DELETE CASCADE,
     `NumberOfShares` INT,
     `PricePaidPerShare` FLOAT
+);
+
+CREATE TABLE `Logs` (
+    `ID` INT,
+    `Change` varchar(45) NOT NULL,
+    `Date` DATETIME DEFAULT NOW() NOT NULL,
+    `Ticker` varchar(45),
+    `NumberOfShares` INT,
+    `PricePaidPerShare` FLOAT,
+    `OldInfo` varchar(45),
+    `NewInfo` varchar(45)
 );
 
 INSERT INTO `SupportedStocks` (`Ticker`, `CompanyName`, `CurrentPrice`) Values ('AAPL', 'Apple Inc', '125.00');
