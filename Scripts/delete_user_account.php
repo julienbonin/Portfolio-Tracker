@@ -10,7 +10,7 @@ $sql = "DELETE FROM `PortfolioTracker`.`Users` WHERE `Users`.`ID` = '$userID'";
 
 $result = $conn->query($sql); // Returns result of query
 if ($result) {
-    $result = $conn->query($sql2);
+    //$result = $conn->query($sql2);
     header("Location: /index.html");
     //if ($result) { 
     //    header("Location: /index.html");

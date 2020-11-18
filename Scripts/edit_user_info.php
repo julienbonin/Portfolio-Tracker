@@ -15,7 +15,7 @@ if (strlen($firstName) > 0) {
     // Get old first name for records
     $logsql = "SELECT `FirstName` FROM `PortfolioTracker`.`Users` WHERE `Users`.`ID`='$userID';";
     $oldFirstName = $conn->query($logsql); 
-    $oldFirstName = $conn->fetch_row(); // Gives old first name
+    $oldFirstName = $oldFirstName->fetch_row(); // Gives old first name
     
     $sql = "UPDATE `PortfolioTracker`.`Users` SET `FirstName`='$firstName' WHERE `Users`.`ID`='$userID'";
     $result = $conn->query($sql); // Returns result of query

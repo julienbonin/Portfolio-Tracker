@@ -1,7 +1,8 @@
+DROP TABLE IF EXISTS `Logs`;
 DROP TABLE IF EXISTS `UserData`;
 DROP TABLE IF EXISTS `Users`;
 DROP TABLE IF EXISTS `SupportedStocks`;
-DROP TABLE IF EXISTS `Logs`;
+
 
 CREATE TABLE `Users` (
     `ID` INT NOT NULL AUTO_INCREMENT,
@@ -30,7 +31,6 @@ CREATE TABLE `UserData` (
 
 CREATE TABLE `Logs` (
     `ID` INT,
-    FOREIGN KEY (`ID`) REFERENCES `Users` (`ID`),
     `Change` varchar(45) NOT NULL,
     `Date` DATETIME DEFAULT NOW() NOT NULL,
     `Ticker` varchar(45),
